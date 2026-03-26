@@ -1,0 +1,25 @@
+import { createBrowserRouter } from "react-router";
+import { Layout } from "./components/Layout";
+import { Home } from "./pages/Home";
+import { BlogList } from "./pages/BlogList";
+import { BlogDetail } from "./pages/BlogDetail";
+import { Products } from "./pages/Products";
+import { ProductDetail } from "./pages/ProductDetail";
+import { Cart } from "./pages/Cart";
+import { Contact } from "./pages/Contact";
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Layout,
+    children: [
+      { index: true, Component: Home },
+      { path: "blog", Component: BlogList },
+      { path: "blog/:id", Component: BlogDetail },
+      { path: "products", Component: Products },
+      { path: "products/:id", Component: ProductDetail },
+      { path: "cart", Component: Cart },
+      { path: "contact", Component: Contact },
+    ],
+  },
+]);
